@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt Collector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Debt Collector</h1>
+        <div class="total-debt-container">
+            <h3>$0</h3>
+        </div>
+    </div>
+    
+    <div class="debt-cards-container" id="debt-cards-container">
+        <!-- Debt cards will appear here -->
+    </div>
+
+    <button class="add-debt-btn" onclick="showModal()">+</button>
+
+    <!-- Modal for adding debt -->
+    <div class="modal" id="debt-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Add Debt</h2>
+            
+            <!-- Updated debt type field with new types -->
+            <label for="debt-type">Type of Debt:</label>
+            <select id="debt-type">
+                <option value="Business">Business</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Government">Government</option>
+                <option value="Installment">Installment</option>
+                <option value="Medical">Medical</option>
+                <option value="Mortgage">Mortgage</option>
+                <option value="Payday">Payday</option>
+                <option value="Personal">Personal</option>
+                <option value="Revolving">Revolving</option>
+                <option value="Student">Student</option>
+                <option value="Subscription">Subscription</option>
+                <option value="Vehicle">Vehicle</option>
+            </select>
+
+            <label for="debtor">Who is the debt to?</label>
+            <input type="text" id="debtor" placeholder="Enter name or company" />
+
+            <label for="total-debt">How much is the total debt?</label>
+            <input type="number" id="total-debt" placeholder="Enter total amount" />
+
+            <label for="payment-amount">How much will be paid at a time?</label>
+            <input type="number" id="payment-amount" placeholder="Enter payment amount" />
+
+            <label for="payment-frequency">How often will the debt be paid?</label>
+            <select id="payment-frequency">
+                <option value="Weekly">Weekly</option>
+                <option value="Bi-Weekly">Bi-Weekly</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Quarterly">Quarterly</option>
+                <option value="Semi-Annually">Semi-Annually</option>
+                <option value="Annually">Annually</option>
+            </select>
+            
+            <label for="payment-date">What day will this be paid each month? (Enter day number)</label>
+            <input type="number" id="payment-date" name="payment-date" min="1" max="31" required />
+            
+            
+
+
+            <div class="add"><button onclick="addDebt()">Enter</button></div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
